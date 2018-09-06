@@ -30,7 +30,7 @@ body {
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
   .main-form__input {
-    width: 90%;
+    width: 85%;
     height: 60px;
     border: 2px solid #ddd;
     border-right: 0;
@@ -59,8 +59,8 @@ body {
       /* Microsoft Edge */
       opacity: 0.5; }
   .main-form__btn {
-    width: 10%;
-    background: #4E505A;
+    width: 15%;
+    background: #FE595F;
     border: 0;
     border-radius: 0 30px 30px 0;
     color: #fff;

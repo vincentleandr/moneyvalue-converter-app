@@ -25,32 +25,58 @@ class App extends Component {
 		event.preventDefault();
 
 		//console.log(this.state.input);
-		//console.log(this.state.bill.length)
+		//console.log(this.state.bill.length) input.substring(0, input.indexOf("-"));
 
-		let convertedInt = parseInt(this.state.input, 10);
+		//let onlyNum = Number(this.state.input.replace(/[^0-9,-]+/g,"").replace(/,00/g, ''));
 
-		let billResultTemp = [];
+		let onlyNum = Number(this.state.input.replace(/[^0-9,-]+/g,"").split(",")[0]);
+		let convertedInt = parseInt(onlyNum, 10);
 
-		for (var i = 0; i < this.state.bill.length; i++) {
-			while (convertedInt >= this.state.bill[i]) {
-				this.setState({ billResult: this.state.billResult.push(this.state.bill[i]) });
-				//billResultTemp.push(this.state.bill[i]);
+		console.log(convertedInt);
+
+		if(convertedInt < 50 && convertedInt !== 0) {
+			this.setState({ billResult: this.state.billResult.push("No available fraction for Rp. " + convertedInt) });
+		}
+
+		for(var i = 0; i < this.state.bill.length; i++) {
+			while(convertedInt >= this.state.bill[i]) {
+				this.setState({ billResult: this.state.billResult.push(this.state.bill[i])});
 				convertedInt = convertedInt - this.state.bill[i];
+
+				if(convertedInt < 50 && convertedInt !== 0) {
+					this.setState({ billResult: this.state.billResult.push("No available fraction for Rp. " + convertedInt) });
+				}
 			}
 		}
 
-		//console.log(billResultTemp);
-		
+		let bills = this.state.billResult;
+
+		let billsFiltered = bills.filter(function(item) {
+			return typeof item === 'number';
+		});
+
+		//console.log(billsFiltered);
+
+
+		let convertedHtml = billsFiltered.map(bill => {
+			<li>{bill}</li>
+		});
+
+		//console.log(convertedHtml);
+
+		document.getElementById('list').innerHTML = convertedHtml;
+
+		// document.getElementById('list').innerHTML = this.state.billResult.map(billResult => {
+		// 	<li>{billResult}</li>
+		// });
 		
         this.setState({
             input: '',
             showDisp: 'show',
 			gotoTop: 'top',
 			billResult: []
-			//billResult: this.state.billResult.push(billResultTemp)
 		});
 
-		//console.log(this.state.billResult);
 		console.log(this.state.billResult);
 	}
 	
@@ -61,6 +87,10 @@ class App extends Component {
 					<input className="main-form__input" type="text" placeholder="Try '15000'" value={this.state.input} onChange={this.onInputChange} />
 					<button className="main-form__btn" type="submit">Go</button>
 				</form>
+
+				<ul id="list">
+					{/* {this.state.billResult.map(bill => <li>{bill}</li>)} */}
+				</ul>
 			</div>
 		);
 	}
