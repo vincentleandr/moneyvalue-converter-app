@@ -92,7 +92,7 @@ class App extends Component {
 			<div className="container">
 				<form className="main-form" onSubmit={this.validateForm}>
 					<input className="main-form__input" type="text" placeholder="Try 'Rp. 15.000,00'" value={this.state.input} onChange={this.onInputChange} autoFocus/>
-					<button className="main-form__btn" type="submit">Go</button>
+					<button className="main-form__btn" type="submit"><i className="fa fa-arrow-right"></i></button>
 				</form>
 				<span className="error-msg">{this.state.errorMsg}</span>
 
