@@ -36,6 +36,9 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 30px;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -71,7 +74,6 @@ ul {
       opacity: 0.5; }
   .main-form__btn {
     position: absolute;
-    top: 12px;
     right: 20px;
     background: none;
     border: 0;
@@ -87,7 +89,9 @@ ul {
     .main-form {
       width: 90%; }
       .main-form__input, .main-form__btn {
-        font-size: 20px; } }
+        font-size: 20px; }
+      .main-form__btn {
+        right: 10px; } }
 
 .display {
   margin-top: 50px;
