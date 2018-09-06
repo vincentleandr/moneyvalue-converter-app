@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700,800");
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700");
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -9,10 +9,24 @@ body {
   padding: 0;
   overflow-x: hidden; }
 
+ul {
+  padding: 0;
+  font-size: 20px;
+  font-weight: 600; }
+  ul li {
+    margin-top: 10px; }
+
+button {
+  cursor: pointer; }
+
 .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -60,9 +74,34 @@ body {
       opacity: 0.5; }
   .main-form__btn {
     width: 15%;
-    background: #FE595F;
+    background: #888;
     border: 0;
     border-radius: 0 30px 30px 0;
     color: #fff;
     font-size: 24px;
-    font-weight: 700; }
+    font-weight: 700;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s; }
+    .main-form__btn:hover {
+      background: #6f6f6f; }
+    .main-form__btn:focus {
+      outline: 0; }
+
+.display {
+  margin-top: 50px;
+  font-size: 24px;
+  font-weight: 600; }
+
+.error-msg {
+  margin-top: 5px;
+  color: red; }
+
+.hidden {
+  visibility: hidden;
+  opacity: 0; }
+
+.show {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s; }

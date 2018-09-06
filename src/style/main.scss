@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700,800');
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700');
 
 * {
     box-sizing: border-box;
@@ -11,8 +11,23 @@ body {
     overflow-x: hidden;
 }
 
+ul {
+    padding: 0;
+    font-size: 20px;
+    font-weight: 600;
+
+    li {
+        margin-top: 10px;
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
 .container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -52,11 +67,42 @@ body {
 
     &__btn {
         width: 15%;
-        background: #FE595F;
+        background: #888;
         border: 0;
         border-radius: 0 30px 30px 0;
         color: #fff;
         font-size: 24px;
         font-weight: 700;
+        transition: all 0.3s;
+
+        &:hover {
+            background: darken(#888, 10%);
+        }
+
+        &:focus {
+            outline: 0;
+        }
     }
+}
+
+.display {
+    margin-top: 50px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.error-msg {
+    margin-top: 5px;
+    color: red;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.show {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.3s;
 }
