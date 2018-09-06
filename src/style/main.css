@@ -10,9 +10,7 @@ body {
   overflow-x: hidden; }
 
 ul {
-  padding: 0;
-  font-size: 20px;
-  font-weight: 600; }
+  padding: 0; }
   ul li {
     margin-top: 10px; }
 
@@ -86,11 +84,19 @@ button {
       background: #6f6f6f; }
     .main-form__btn:focus {
       outline: 0; }
+  @media screen and (max-width: 1000px) {
+    .main-form {
+      width: 90%; }
+      .main-form__input, .main-form__btn {
+        font-size: 20px; } }
 
 .display {
   margin-top: 50px;
   font-size: 24px;
   font-weight: 600; }
+  @media screen and (max-width: 1000px) {
+    .display {
+      font-size: 18px; } }
 
 .error-msg {
   margin-top: 5px;

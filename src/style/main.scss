@@ -13,8 +13,6 @@ body {
 
 ul {
     padding: 0;
-    font-size: 20px;
-    font-weight: 600;
 
     li {
         margin-top: 10px;
@@ -83,12 +81,25 @@ button {
             outline: 0;
         }
     }
+
+    @media screen and (max-width: 1000px) {
+        width: 90%;
+
+        &__input,
+        &__btn {
+            font-size: 20px;
+        }
+    }
 }
 
 .display {
     margin-top: 50px;
     font-size: 24px;
     font-weight: 600;
+
+    @media screen and (max-width: 1000px) {
+        font-size: 18px;
+    }
 }
 
 .error-msg {
